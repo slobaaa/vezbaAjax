@@ -1,5 +1,5 @@
 var get = $.ajax({
-	url: 'http://localhost:3000/prijava',
+	url: 'https://slobaaa.github.io/vezbaAjax/prijava',
 	type: 'GET'
 }) //iscitao je json i u sledecem redu te podatke smesta u promenljivu podatak i je id a podatak je ostalo
 get.done(function(podaci) {
@@ -13,7 +13,7 @@ get.done(function(podaci) {
 $("#tabela tbody").on('click', 'button', function() {
 		if ($(this).hasClass('btn-danger')) {
 			$.ajax({
-				url: 'http://localhost:3000/prijava/' + $(this).attr("id"),
+				url: 'https://slobaaa.github.io/vezbaAjax/prijava/' + $(this).attr("id"),
 				type: 'DELETE',
 				dataType: 'json',
 				success: function() {
@@ -88,13 +88,13 @@ $("#tabela tbody").on('click', 'button', function() {
 
 					var osoba={ime:imef, prezime:prezimef, email:emailf, jmbg:jmbgf, komentar:komentarf};
 					$.ajax({
-						url: 'http://localhost:3000/prijava/' + btnThis.attr("id"),
+						url: 'https://slobaaa.github.io/vezbaAjax/prijava/' + btnThis.attr("id"),
 						type: 'PUT',
 						data: osoba,
 						success: function (podatak){
 							var get = $.ajax({
 								type: "GET",
-								url: "http://localhost:3000/prijava"
+								url: "https://slobaaa.github.io/vezbaAjax/prijava"
 							});
 
 							get.done(function(podaci){
@@ -182,7 +182,7 @@ function dodajNovogZaposlenog() {
 					var dataToSend = {ime:imef,prezime:prezimef,email:emailf, jmbg:jmbgf, komentar:komentarf};
 						var zahtev = $.ajax({
 						type: "POST",
-						url: 'http://localhost:3000/prijava',
+						url: 'https://slobaaa.github.io/vezbaAjax/prijava',
 						data: dataToSend
 					});
 			
@@ -194,7 +194,7 @@ function dodajNovogZaposlenog() {
 					
 					var get = $.ajax({
 						type: "GET",
-						url: "http://localhost:3000/prijava"
+						url: "https://slobaaa.github.io/vezbaAjax/prijava"
 					});
 
 					get.done(function(podaci){
